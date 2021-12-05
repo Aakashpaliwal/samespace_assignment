@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
-import $ from "jquery";
-// import "./progres.css";
+import React from "react";
 
 const Progress = ({ number, percentage }) => {
-  console.log("precentage", percentage);
   return (
     <div class="progress">
       <div class="barOverflow">

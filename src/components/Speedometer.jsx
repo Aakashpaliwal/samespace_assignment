@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
-import InnerSvg from "./InnerSvg";
 import "./speedometer.scss";
-import $ from "jquery";
 import Progress from "./Progress";
 
 const Speedometer = () => {
-  const [number, setNumber] = React.useState(0);
+  const [number, setNumber] = React.useState(200);
   const [percentage, setPercentage] = React.useState(0);
 
   useEffect(() => {
@@ -24,7 +22,6 @@ const Speedometer = () => {
   }, [number]);
 
   useEffect(() => {
-    console.log("number her", number);
     let percentage = (number / 220) * 100;
     setPercentage(percentage);
   }, [number]);
