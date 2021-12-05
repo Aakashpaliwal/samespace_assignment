@@ -3,7 +3,7 @@ import "./speedometer.scss";
 import Progress from "./Progress";
 
 const Speedometer = () => {
-  const [number, setNumber] = React.useState(200);
+  const [number, setNumber] = React.useState(0);
   const [percentage, setPercentage] = React.useState(0);
 
   useEffect(() => {
