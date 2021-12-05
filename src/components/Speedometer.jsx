@@ -6,31 +6,7 @@ import Progress from "./Progress";
 
 const Speedometer = () => {
   const [number, setNumber] = React.useState(0);
-  const [percentage, setPercentage] = React.useState(62);
-
-  //   useEffect(() => {
-  //     $(".progress").each(function () {
-  //       var $bar = $(this).find(".bar");
-  //       var $val = $(this).find("span");
-  //       var perc = parseInt($val.text(), 10);
-  //       //   console.log(perc);
-
-  //       $({ p: 0 }).animate(
-  //         { p: perc },
-  //         {
-  //           duration: 3000,
-  //           easing: "swing",
-  //           step: function (p) {
-  //             $bar.css({
-  //               transform: "rotate(" + (45 + p * 1.8) + "deg)", // 100%=180° so: ° = % * 1.8
-  //               // 45 is to add the needed rotation to have the green borders at the bottom
-  //             });
-  //             $val.text(p | 0);
-  //           },
-  //         }
-  //       );
-  //     });
-  //   }, []);
+  const [percentage, setPercentage] = React.useState(0);
 
   useEffect(() => {
     let interval = null;
@@ -47,50 +23,15 @@ const Speedometer = () => {
     };
   }, [number]);
 
-  //   useEffect(() => {
-  //     console.log("number her", number);
-  //     let percentage = (number / 220) * 100;
-  //     setPercentage(percentage);
-  //   }, [number]);
-
-  //   useEffect(() => {
-  //     console.log("percentage", percentage);
-  //     $(".progress").each(function () {
-  //       var $bar = $(this).find(".bar");
-  //       var $val = $(this).find("span");
-  //       //   var perc = parseInt($val.text(), 10);
-  //       //   console.log(perc);
-
-  //       $({ p: 0 }).animate(
-  //         { p: percentage },
-  //         {
-  //           duration: 3000,
-  //           easing: "swing",
-  //           step: function (p) {
-  //             $bar.css({
-  //               transform: "rotate(" + (45 + p * 1.8) + "deg)", // 100%=180° so: ° = % * 1.8
-  //               // 45 is to add the needed rotation to have the green borders at the bottom
-  //             });
-  //             $val.text(p | 0);
-  //           },
-  //         }
-  //       );
-  //     });
-  //   }, [percentage]);
+  useEffect(() => {
+    console.log("number her", number);
+    let percentage = (number / 220) * 100;
+    setPercentage(percentage);
+  }, [number]);
 
   return (
     <div className="speedometer_container">
-      {/* <div class="progress">
-        <div class="barOverflow">
-          <div class="bar"></div>
-        </div>
-        <span>52</span>%
-      </div> */}
       <Progress number={number} percentage={percentage} />
-
-      {/* <div className="outermost_circle">
-       
-      </div> */}
       <div className="inner_circle">
         <div class="speedometer">
           <svg
